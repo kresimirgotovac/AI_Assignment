@@ -6,11 +6,11 @@ This program allows users to convert various metric units to their corresponding
 Usage
 -----
 1. Run the program in a Java environment (JRE or JDK) to start the converter.
-2. The program will display a menu of conversion options: Length, Weight, Volume, and Exit.
-3. Choose the desired conversion option by entering the corresponding number (1, 2, 3, or 4).
-4. If you select one of the conversion options (1, 2, or 3), the program will prompt you to enter the value you wish to convert.
+2. The program will display a menu of conversion options: Length, Weight, Volume, Time, and Exit.
+3. Choose the desired conversion option by entering the corresponding number (1, 2, 3, 4, or 5).
+4. If you select one of the conversion options (1, 2, 3, or 4), the program will prompt you to enter the value you wish to convert.
 5. Enter a valid numeric value for conversion.
-6. The program will display the converted value in the respective imperial unit.
+6. The program will display the converted value in the respective imperial unit (or appropriate time conversion).
 7. If you want to convert another value for the same conversion type, you can choose to do so by entering 'yes' when prompted. Otherwise, choose 'no' to go back to the main menu.
 
 Conversion Options
@@ -24,7 +24,10 @@ Conversion Options
 3. Convert Volume (liters to gallons):
    This option allows you to convert a volume value in liters to its equivalent value in gallons.
 
-4. Exit:
+4. Convert 12hr time to 24hr time:
+   This option allows you to convert 12hr time to 24hr military time.
+
+6. Exit:
    Selecting this option will terminate the program and exit the converter.
 
 Input Validation
@@ -36,6 +39,7 @@ Supported Units and Conversion Factors
 1 meter (m)        = 3.28084 feet (ft)
 1 kilogram (kg)    = 2.20462 pounds (lbs)
 1 liter (L)        = 0.264172 gallons (gal)
+time in 12-hour format (hh:mm am/pm)
 
 Modularity and Extensibility
 ----------------------------
@@ -45,10 +49,7 @@ Open/Closed Principle (OCP) and Interface Segregation Principle (ISP)
 --------------------------------------------------------------------
 The program adheres to the OCP and ISP principles. The 'MetricToImperialConverter' class is closed for modification and open for extension, enabling easy addition of new conversion types without modifying existing code. The 'Converter' interface follows the ISP by providing a specific method ('convert()') for each conversion type, promoting clean and minimal interfaces.
 
-License
--------
-This program is free software; you can redistribute it and/or modify it under the terms of the MIT License.
 
 Author
 ------
-This program was developed by [Your Name].
+This program was developed by [ChatGPT].
