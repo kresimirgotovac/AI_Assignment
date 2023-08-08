@@ -1,3 +1,7 @@
+DISCLAIMER: I'm sorry the chat pdf is so large. There are a lot of pages because chatgpt kept giving me unusable responses. The prompts where I ask for the "additional prompts" as requested in the assignment details are closer to the beginning/middle of the pdf. The program got too complicated near the end and unfortunately I was not able to implement the last feature "display the current time". However, I did prompt chatgpt to write that code. Please go easy on me if you can
+
+
+
 Metric to Imperial Unit Converter
 ================================
 
