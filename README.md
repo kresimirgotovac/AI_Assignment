@@ -1,4 +1,4 @@
-DISCLAIMER: I'm sorry the chat pdf is so large. There are a lot of pages because chatgpt kept giving me unusable responses. The prompts where I ask for the "additional prompts" as requested in the assignment details are closer to the beginning/middle of the pdf. The program got too complicated near the end and unfortunately I was not able to implement the last feature "display the current time". However, I did prompt chatgpt to write that code. Please go easy on me if you can
+DISCLAIMER: I'm sorry the chat pdf is so large. There are a lot of pages because chatgpt kept giving me unusable responses. The prompts where I ask for the "additional prompts" as requested in the assignment details are closer to the beginning/middle of the pdf (highlighted so you can scroll through the noise). I deleted pages that were only chatgpt responding with blocks of code that I didn't endup using. The program got too complicated near the end and unfortunately I was not able to implement the last feature "display the current time". Once chatgpt started changing the core implementation it was too far to restart the chat. However, I did prompt chatgpt to write that code.
 
 
 
