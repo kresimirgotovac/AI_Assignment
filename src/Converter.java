@@ -23,7 +23,6 @@ class Time12hrTo24hrConverter implements Converter {
         String inputTime = scanner.nextLine();
         String convertedTime = convert12HourTo24Hour(inputTime);
         System.out.println("Converted Time: " + convertedTime);
-        scanner.close();
     }
 
     private String convert12HourTo24Hour(String inputTime) {
