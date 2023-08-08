@@ -126,6 +126,3 @@ public class MetricToImperialConverter {
         return liters * 0.264172;
     }
 }
-
-
-
