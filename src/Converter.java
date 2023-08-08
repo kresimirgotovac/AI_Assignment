@@ -1,3 +1,9 @@
+import java.util.Scanner;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 /**
  * The Converter interface defines a common contract for all conversion types.
  */
@@ -8,6 +14,29 @@ interface Converter {
      * @param value The value to be converted.
      */
     void convert(double value);
+}
+class Time12hrTo24hrConverter implements Converter {
+    @Override
+    public void convert(double value) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the time in 12-hour format (hh:mm am/pm): ");
+        String inputTime = scanner.nextLine();
+        String convertedTime = convert12HourTo24Hour(inputTime);
+        System.out.println("Converted Time: " + convertedTime);
+        scanner.close();
+    }
+
+    private String convert12HourTo24Hour(String inputTime) {
+        DateFormat inputFormat = new SimpleDateFormat("hh:mm a", Locale.US);
+        DateFormat outputFormat = new SimpleDateFormat("HH:mm", Locale.US);
+        try {
+            Date date = inputFormat.parse(inputTime);
+            return outputFormat.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return "Invalid Time Format";
+        }
+    }
 }
 /**
  * The LengthConverter class converts length values from meters to feet.
@@ -63,4 +92,5 @@ class VolumeConverter implements Converter {
     private double litersToGallons(double liters) {
         return liters * 0.264172;
     }
+
 }

@@ -16,34 +16,36 @@ public class MetricToImperialConverter {
             System.out.println("1. Convert Length (meters to feet)");
             System.out.println("2. Convert Weight (kilograms to pounds)");
             System.out.println("3. Convert Volume (liters to gallons)");
-            System.out.println("4. Exit");
+            System.out.println("4. Convert 12-hour time to 24-hour time");
+            System.out.println("5. Exit");
 
             int choice = getValidChoice(scanner);
 
-            if (choice == 4) {
+            if (choice == 5) {
                 System.out.println("Exiting the converter. Goodbye!");
                 break;
             }
 
             Converter converter;
             switch (choice) {
-                case 1:
-                    converter = new LengthConverter();
-                    break;
-                case 2:
-                    converter = new WeightConverter();
-                    break;
-                case 3:
-                    converter = new VolumeConverter();
-                    break;
-                default:
+                case 1 -> converter = new LengthConverter();
+                case 2 -> converter = new WeightConverter();
+                case 3 -> converter = new VolumeConverter();
+                case 4 -> converter = new Time12hrTo24hrConverter();
+                case 5 -> {
+                    System.out.println("Exiting the converter. Goodbye!");
+                    scanner.close();
+                    return;
+                }
+                default -> {
                     System.out.println("Invalid choice. Please choose a valid option.");
                     continue;
+                }
             }
 
             double value;
             while (true) {
-                value = getValidDoubleInput(scanner, "Enter the value to convert: ");
+                value = getValidDoubleInput(scanner);
                 converter.convert(value);
 
                 System.out.print("Do you want to convert another value for this type? (" + YES_OPTION + "/" + NO_OPTION + "): ");
@@ -55,7 +57,6 @@ public class MetricToImperialConverter {
                 }
             }
         }
-
         scanner.close();
     }
 
@@ -66,27 +67,27 @@ public class MetricToImperialConverter {
      * @return The user's selected conversion option.
      */
     private static int getValidChoice(Scanner scanner) {
-        int choice = 0;
+        int choice;
         while (true) {
             try {
                 choice = scanner.nextInt();
-                if (choice >= 1 && choice <= 4) {
+                if (choice >= 1 && choice <= 5) {
                     break;
                 } else {
-                    System.out.println("Invalid choice. Please choose a valid option (1-4).");
+                    System.out.println("Invalid choice. Please choose a valid option (1-5).");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a number (1-4).");
+                System.out.println("Invalid input. Please enter a number (1-5).");
                 scanner.nextLine(); // Clear the input buffer
             }
         }
         return choice;
     }
 
-    private static double getValidDoubleInput(Scanner scanner, String prompt) {
-        double value = 0;
+    private static double getValidDoubleInput(Scanner scanner) {
+        double value;
         while (true) {
-            System.out.print(prompt);
+            System.out.print("Enter the value to convert: ");
             try {
                 value = scanner.nextDouble();
                 break;
@@ -97,6 +98,7 @@ public class MetricToImperialConverter {
         }
         return value;
     }
+
     /**
      * Converts a length value from meters to feet.
      *
